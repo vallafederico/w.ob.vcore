@@ -1,5 +1,6 @@
 import { serve, build } from "esbuild";
-import { glsl } from "esbuild-plugin-glsl";
+import { glsl } from "esbuild-plugin-glsl-include";
+import fse from "fs-extra";
 
 /* - Setup */
 const env = process.env.NODE_ENV;
@@ -71,6 +72,14 @@ function buildJs() {
     console.log(stats);
   });
 }
+
+// // COPY FILES
+// try {
+//   fse.copySync("src/assets", "dist/assets", { overwrite: true });
+//   console.log("success!");
+// } catch (err) {
+//   console.error(err);
+// }
 
 /* ------ Run! */
 if (production) {

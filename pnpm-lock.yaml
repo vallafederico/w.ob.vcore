@@ -4,6 +4,7 @@ specifiers:
   '@studio-freight/lenis': ^0.2.13
   esbuild: ^0.15.16
   esbuild-plugin-glsl: ^1.1.0
+  esbuild-plugin-glsl-include: ^0.0.5
   gsap: npm:@gsap/shockingly@^3.11.3
   install: ^0.13.0
   three: ^0.146.0
@@ -19,6 +20,7 @@ dependencies:
 devDependencies:
   esbuild: 0.15.16
   esbuild-plugin-glsl: 1.1.0_esbuild@0.15.16
+  esbuild-plugin-glsl-include: 0.0.5
 
 packages:
 
@@ -194,6 +196,11 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /esbuild-plugin-glsl-include/0.0.5:
+    resolution: {integrity: sha512-06kNfxdD4Rg9V3EHkXji9d23hixXSotPZLkVHHksGbtD0aQWHAmCFI6O+u/+3cg/2l3fDFXgSC74zAd2+vFCOw==}
+    engines: {node: '>=12'}
+    dev: true
 
   /esbuild-plugin-glsl/1.1.0_esbuild@0.15.16:
     resolution: {integrity: sha512-OBzCa/nRy/Vbm62DBzBnV25p1BfTpvFf2SP2Vv9Ls38sdEEuHzhYT5xTOh3Ghu+77VI4iZsOam19cmjwq5RcJQ==}

@@ -1,9 +1,12 @@
 import { WebGLRenderer } from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+
 import Loader from "./util/loader.js";
 import Viewport from "./viewport.js";
 import Scene from "./scene.js";
 import Camera from "./camera.js";
+
+import { Post } from "./post.js";
 
 export default class Gl {
   constructor(sel) {
@@ -32,6 +35,7 @@ export default class Gl {
   async load() {
     this.loader = new Loader();
     this.assets = await this.loader.load();
+    // console.log(this.assets);
 
     this.init();
   }
@@ -39,7 +43,14 @@ export default class Gl {
   init() {
     this.create();
     this.initEvents();
+
     this.render();
+
+    this.post = new Post({
+      renderer: this.renderer,
+      scene: this.scene,
+      camera: this.camera,
+    });
   }
 
   initEvents() {
@@ -53,14 +64,20 @@ export default class Gl {
 
   render() {
     if (this.paused) return;
-    this.time += 0.05;
+    this.time += 0.01;
 
     this.controls?.update();
 
     if (this.scene && this.scene.render) this.scene.render(this.time);
 
+    if (this.post?.isOn) {
+      this.post.renderPasses(this.time);
+      this.post.render();
+    } else {
+      this.renderer.render(this.scene, this.camera);
+    }
+
     requestAnimationFrame(this.render.bind(this));
-    this.renderer.render(this.scene, this.camera);
   }
 
   resize() {

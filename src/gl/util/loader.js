@@ -8,8 +8,13 @@ export default class {
   }
 
   async load() {
+    console.time("load");
+
     const [model] = await Promise.all([loadModel(assets.model)]);
 
+    console.timeEnd("load");
+
+    // SPLIT MODEL HERE
     return {
       model,
     };

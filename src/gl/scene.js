@@ -1,21 +1,21 @@
 import { Scene } from "three";
-import Quad from "./quad.js";
+// import Quad from "./quad.js";
+import { Model } from "./model.js";
 
 export default class extends Scene {
-  constructor(data = {}) {
+  constructor() {
     super();
-    this.data = data;
 
     this.create();
   }
 
   create() {
-    this.quad = new Quad();
-    this.add(this.quad);
+    this.model = new Model();
+    this.add(this.model);
   }
 
   render(t) {
-    if (this.quad) this.quad.render(t);
+    if (this.model) this.model.render(t);
   }
 
   resize() {}
