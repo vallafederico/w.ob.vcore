@@ -1,4 +1,6 @@
 import { Group } from "three";
+import { Observe } from "../util/observe.js";
+
 import CoinMaterial from "./mat/coin";
 import spinMaterial from "./mat/spin";
 import skinMaterial from "./mat/skin";
@@ -13,6 +15,28 @@ export class Model extends Group {
 
     this.add(this.pcs.figure);
     this.add(this.pcs.sphere);
+
+    this.pcs.sphere.visible = false;
+
+    this.addEvents();
+  }
+
+  addEvents() {
+    // data-gl-track="hero"
+    // data-gl-track="slider"
+    new Observe({
+      element: document.querySelector('[data-gl-track="hero"]'),
+    }).on("IN", () => {
+      this.pcs.figure.visible = true;
+      this.pcs.sphere.visible = false;
+    });
+
+    new Observe({
+      element: document.querySelector('[data-gl-track="slider"]'),
+    }).on("IN", () => {
+      this.pcs.figure.visible = false;
+      this.pcs.sphere.visible = true;
+    });
   }
 
   render(t, { ex, ey }) {
@@ -69,7 +93,7 @@ export class Model extends Group {
     // TRAVERSE skinned mesh
     bone.traverse((child) => {
       if (child.isSkinnedMesh) {
-        console.log("skin", child.name);
+        // console.log("skin", child.name);
         this.pcs[child.name.substr(0, 3)] = child;
       } else {
         // console.log("bone", child.name);

@@ -1,5 +1,6 @@
 import { Scene } from "three";
 import gsap from "gsap";
+
 import { Model } from "./model.js";
 
 export default class extends Scene {

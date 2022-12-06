@@ -59,6 +59,7 @@ function serveFile() {
     console.log("http://localhost:8000/dev.js");
     console.log("https://webflow.com/design/vcore");
     console.log("https://vcore.webflow.io/");
+    console.log("https://codesandbox.io/s/vcore-starter-nont6c");
     //   server.stop();
   });
 }

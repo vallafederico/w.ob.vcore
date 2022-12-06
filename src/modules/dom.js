@@ -1,7 +1,9 @@
 import { Text } from "./animation/text";
 
 export default class {
-  constructor() {}
+  constructor() {
+    this.createText();
+  }
 
   resize() {}
 
