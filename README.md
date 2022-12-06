@@ -1,13 +1,40 @@
-# Vite Boilerplate
+# Vcore
 
-#### TODO
+### Spin Up
 
-##### Animations
+`pnpm i` + `npm run flow`
 
-- [x] text class
-- [ ] track class (?)
+## Todo
 
-##### Gl
+### TODO — design
 
-- [ ] preloader class (should be in gl?)
-- [ ] with emitting promises
+- [ ] hero section w/ text
+- [ ] preloader w/loading + video
+
+### TODO — webflow
+
+- [ ] masonry section
+
+- [ ] (mobile) menu
+- [ ] (mobile) footer
+
+- [ ] preloader w/video
+
+- [ ] privacy policy & cookie policy pages (maybe a single one?) @ross CMS? / External?
+
+- [ ] location based re-routing -[ ] /page — wrong location can't access
+
+### TODO — webgl
+
+- [ ] swap model (waiting 4 model)
+- [ ] transitions
+- [ ] shaders & post
+- [ ] ...
+
+### TO GET — external
+
+- [ ] backers icons (svg) (ross/client)
+- [ ] team pictures (client)
+- [ ] newsletter post URL (client)
+- [ ] video preloader (client)
+- [ ] privacy policy & cookie policy (client) [pending decision]
