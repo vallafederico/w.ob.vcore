@@ -57,6 +57,8 @@ function serveFile() {
     }
   ).then((server) => {
     console.log("http://localhost:8000/dev.js");
+    console.log("https://webflow.com/design/vcore");
+    console.log("https://vcore.webflow.io/");
     //   server.stop();
   });
 }

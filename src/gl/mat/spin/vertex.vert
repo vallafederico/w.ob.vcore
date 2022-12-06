@@ -4,6 +4,9 @@ uniform float u_time;
 // uniform vec4 u_spin_angle;
 
 varying vec2 v_uv;
+varying vec3 v_normal;
+varying vec3 v_view;
+
 
 #include "../_/rotate.glsl"
 
@@ -11,8 +14,11 @@ varying vec2 v_uv;
 void main() {
   vec3 pos = position;
 
-  // pos = rotate(pos, u_spin_angle.xyz * u_spin_angle.w, u_time * u_spin_angle.w);
 
   gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+  
   v_uv = uv;
+  v_normal = vec4(vec4(normal, 1.) * modelViewMatrix).xyz;
+  v_view = normalize(-gl_Position.xyz);
+
 }

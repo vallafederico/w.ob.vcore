@@ -10,9 +10,11 @@ export default class extends ShaderMaterial {
       fragmentShader,
     });
 
+    const { mt_gold, mt_black } = window.app.gl.assets;
+
     this.uniforms = {
       u_time: { value: options?.u_time || 0 },
-      u_t1: { value: options?.u_t1 || null },
+      u_mt_gold: { value: mt_gold },
     };
 
     this.side = DoubleSide;

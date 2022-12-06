@@ -1,49 +1,64 @@
 import { Group } from "three";
 import CoinMaterial from "./mat/coin";
 import spinMaterial from "./mat/spin";
+import skinMaterial from "./mat/skin";
+import skinAltMaterial from "./mat/skin-alt";
 
 export class Model extends Group {
   constructor() {
     super();
 
     this.model = window.app.gl.assets.model;
-    this.add(this.model);
     this.traverse();
 
-    // console.log(window.app.scroll.speed);
+    this.add(this.pcs.figure);
+    this.add(this.pcs.sphere);
   }
 
-  render(t) {
-    // console.log(t);
-
+  render(t, { ex, ey }) {
+    // params
     let { speed } = window.app.scroll;
     speed = -speed * 0.003;
 
-    this.rotation.x = this.rotation.z = speed;
-
     if (this.pcs) {
+      // rotate figure with mouse
+      this.rotation.x = -ey * 0.2;
+      this.rotation.y = ex * 0.2;
+    }
+
+    if (this.pcs?.sphere) {
+      // rotate sphere model with scroll speed
+      this.pcs.sphere.rotation.x =
+        this.pcs.sphere.rotation.z =
+        this.pcs.sphere.rotation.y =
+          speed * 1;
+
+      // spin coin
+      this.pcs.coin.rotation.set(t, Math.sin(t) * 0.4, t);
+      // spin armillary
       this.pcs.spin.forEach((child, i) => {
-        const { x, y, z, rand } = child.rotationFactor;
+        const { x, y, z, rand } = child.rf;
         child.rotation.set(x * (rand + t), y * (rand + t), z * (rand + t));
       });
     }
   }
 
   traverse() {
+    const [bone, model] = this.model.children;
+
     this.pcs = { spin: [] };
 
-    this.model.traverse((child) => {
+    // TRAVERSE coin and spinner
+    model.traverse((child) => {
       if (child.isMesh) {
-        this.pcs[child.name] = child;
+        // console.log(child.name);
 
-        if (child.name !== "coin") {
+        if (child.name.substr(0, 1) === "r") {
           // SPINNING
           this.pcs.spin.push(child); // to array
-
           child.material = new spinMaterial();
-
-          child.rotationFactor = getRotationFactor(child.name);
-        } else if (child.name === "coin") {
+          child.rf = getRotationFactor(child.name);
+        } else if (child.name.substr(0, 4) === "coin") {
           // COIN
           this.pcs[child.name] = child;
           child.material = new CoinMaterial();
@@ -51,7 +66,28 @@ export class Model extends Group {
       }
     });
 
-    console.log(this.pcs);
+    // TRAVERSE skinned mesh
+    bone.traverse((child) => {
+      if (child.isSkinnedMesh) {
+        console.log("skin", child.name);
+        this.pcs[child.name.substr(0, 3)] = child;
+      } else {
+        // console.log("bone", child.name);
+      }
+    });
+
+    // FIGURE
+    this.pcs.ski.material = new skinMaterial();
+    this.pcs.bot.material = new skinAltMaterial();
+    this.pcs.figure = new Group();
+    this.pcs.figure.add(this.pcs.ski, this.pcs.bot);
+
+    // SPINNING
+    this.pcs.sphere = new Group();
+    this.pcs.sphere.add(this.pcs.coin, ...this.pcs.spin);
+
+    // color one of the spinners
+    this.pcs.spin[4].material = new CoinMaterial();
   }
 }
 

@@ -1,5 +1,5 @@
 import { Scene } from "three";
-// import Quad from "./quad.js";
+import gsap from "gsap";
 import { Model } from "./model.js";
 
 export default class extends Scene {
@@ -7,6 +7,33 @@ export default class extends Scene {
     super();
 
     this.create();
+    this.initEvents();
+  }
+
+  initEvents() {
+    this.vp = {
+      w: window.innerWidth,
+      h: window.innerHeight,
+    };
+
+    this.mouse = {
+      x: 0,
+      y: 0,
+      ex: 0,
+      ey: 0,
+    };
+
+    window.onmousemove = ({ clientX, clientY }) => {
+      this.mouse.x = (clientX / this.vp.w) * 2 - 1;
+      this.mouse.y = ((clientY / this.vp.h) * 2 - 1) * -1;
+
+      gsap.to(this.mouse, {
+        duration: 1,
+        ex: this.mouse.x,
+        ey: this.mouse.y,
+        ease: "power3.out",
+      });
+    };
   }
 
   create() {
@@ -15,8 +42,11 @@ export default class extends Scene {
   }
 
   render(t) {
-    if (this.model) this.model.render(t);
+    if (this.model) this.model.render(t, this.mouse);
   }
 
-  resize() {}
+  resize() {
+    this.vp.w = window.innerWidth;
+    this.vp.h = window.innerHeight;
+  }
 }

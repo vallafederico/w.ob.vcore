@@ -7,7 +7,7 @@ import { Shader } from "./mat/post/base";
 export class Post extends EffectComposer {
   constructor({ renderer, scene, camera }) {
     super(renderer);
-    this.isOn = false;
+    this.isOn = true;
     this.renderer = renderer;
 
     this.renderPass = new RenderPass(scene, camera);
