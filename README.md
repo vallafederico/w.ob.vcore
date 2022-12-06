@@ -31,6 +31,11 @@
 - [ ] shaders & post
 - [ ] ...
 
+### TODO — js
+
+- [ ] animations dom
+- [ ] animation text
+
 ### TO GET — external
 
 - [ ] backers icons (svg) (ross/client)

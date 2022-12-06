@@ -1,8 +1,10 @@
 import { Text } from "./animation/text";
+import { Translate } from "./animation/translate";
 
 export default class {
   constructor() {
     this.createText();
+    this.createAnimation();
   }
 
   resize() {}
@@ -25,6 +27,14 @@ export default class {
     this.text.chars.forEach((char) => char.animateOut());
     this.text.words.forEach((word) => word.animateOut());
     this.text.lines.forEach((line) => line.animateOut());
+  }
+
+  createAnimation() {
+    this.translateUp = [
+      ...document.querySelectorAll(
+        '[data-a="up"], [data-a="down"], [data-a="left"], [data-a="right"]'
+      ),
+    ].map((el) => new Translate({ element: el, anim: { d: 1.8 } }));
   }
 
   /* --  Pages */
