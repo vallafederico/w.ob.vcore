@@ -26,6 +26,8 @@ export class Char extends Group {
 
   render(t, { x, y }, trans = 0.005) {
     this.holoMat.time = t * 0.4;
+    this.holoMat.alpha = trans * 20;
+
     this.mixer.setTime(trans * 10);
   }
 

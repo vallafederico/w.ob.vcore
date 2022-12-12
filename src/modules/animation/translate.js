@@ -21,7 +21,7 @@ export class Translate extends Observe {
       delay: 0.3,
       each: 0.05,
       from: "start",
-      once: false,
+      once: true,
       ...anim,
     };
 

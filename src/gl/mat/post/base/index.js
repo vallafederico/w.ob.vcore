@@ -9,6 +9,7 @@ export const CopyShader = {
     tDiffuse: { value: null },
     opacity: { value: 1.0 },
     u_dark: { value: 0.0 },
+    u_time: { value: 0.0 },
   },
   vertexShader,
   fragmentShader,
@@ -26,5 +27,9 @@ export class Shader extends ShaderPass {
       value,
       ease: "power3.out",
     });
+  }
+
+  set time(value) {
+    this.uniforms.u_time.value = value;
   }
 }

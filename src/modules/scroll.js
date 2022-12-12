@@ -4,7 +4,7 @@ import { easeOutExpo } from "../util/easings.js";
 export default class extends Lenis {
   constructor() {
     super({
-      duration: 1,
+      duration: 0.5,
       smooth: true,
       easing: easeOutExpo,
       direction: "vertical",
@@ -13,7 +13,7 @@ export default class extends Lenis {
     });
 
     this.isActive = true;
-    this.timeFactor = 10;
+    this.timeFactor = 5;
     this.time = 0;
 
     this.init();

@@ -21,7 +21,7 @@ export class Text extends Observe {
       delay: 0.1,
       each: 0.05,
       from: "start",
-      once: false,
+      once: true,
       ...anim,
     };
 

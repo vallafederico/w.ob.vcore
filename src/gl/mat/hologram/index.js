@@ -14,7 +14,9 @@ export default class extends ShaderMaterial {
 
     this.uniforms = {
       u_time: { value: options?.u_time || 0 },
-      u_mt_black: { value: tx_faces },
+      u_tx_faces: { value: tx_faces },
+      u_face_swap: { value: 0 },
+      u_alpha: { value: 0 },
     };
 
     this.side = DoubleSide;
@@ -22,9 +24,22 @@ export default class extends ShaderMaterial {
 
     this.transparent = true;
     // this.blending = SubtractiveBlending;
+
+    // swap faces
+    setInterval(() => {
+      this.face_swap = Math.floor(Math.random() * 2);
+    }, 10000);
   }
 
   set time(t) {
     this.uniforms.u_time.value = t;
+  }
+
+  set face_swap(v) {
+    this.uniforms.u_face_swap.value = v * 0.5;
+  }
+
+  set alpha(v) {
+    this.uniforms.u_alpha.value = v;
   }
 }

@@ -15,17 +15,7 @@ export class Spinning extends Group {
   }
 
   render(t, { ex, ey }) {
-    // params
-    let { speed } = window.app.scroll;
-    speed = -speed * 0.003;
-
     if (this.pcs?.sphere) {
-      // rotate sphere model with scroll speed
-      this.pcs.sphere.rotation.x =
-        this.pcs.sphere.rotation.z =
-        this.pcs.sphere.rotation.y =
-          speed * 1;
-
       // spin coin
       this.pcs.coin.rotation.set(t, Math.sin(t) * 0.4, t);
       // spin armillary

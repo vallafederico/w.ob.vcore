@@ -1,5 +1,6 @@
 import { Text } from "./animation/text";
 import { Translate } from "./animation/translate";
+import { Alpha } from "./animation/alpha";
 
 export default class {
   constructor() {
@@ -35,6 +36,10 @@ export default class {
         '[data-a="up"], [data-a="down"], [data-a="left"], [data-a="right"]'
       ),
     ].map((el) => new Translate({ element: el, anim: { d: 1.8 } }));
+
+    this.alpha = [...document.querySelectorAll('[data-a="alpha"]')].map(
+      (el) => new Alpha({ element: el })
+    );
   }
 
   /* --  Pages */

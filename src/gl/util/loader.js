@@ -10,11 +10,12 @@ export default class {
   async load() {
     console.time("load");
 
-    const [model, mt_black, mt_gold, tx_faces] = await Promise.all([
+    const [model, mt_black, mt_gold, tx_faces, mt_metal] = await Promise.all([
       loadModel(assets.model),
       loadTexture(assets.mt_black),
       loadTexture(assets.mt_gold),
       loadTexture(assets.tx_faces),
+      loadTexture(assets.mt_metal),
     ]);
 
     console.timeEnd("load");
@@ -28,6 +29,7 @@ export default class {
       mt_black,
       mt_gold,
       tx_faces,
+      mt_metal,
     };
   }
 }

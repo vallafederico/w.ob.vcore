@@ -39,6 +39,11 @@ export default class extends Scene {
     this.ctrl.rotation.x = 0.2 - this.mouse.ey * 0.1;
     this.ctrl.rotation.y = this.mouse.ex * 0.1;
 
+    // rotate with speed
+    let { y } = window.app.scroll;
+    y = -y * 0.0008;
+    this.spinning.rotation.z = y;
+
     // render children
     if (this.spinning) this.spinning.render(t, this.mouse);
     if (this.char) this.char.render(t, this.mouse, this.transform.perc);
