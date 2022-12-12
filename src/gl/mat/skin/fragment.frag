@@ -12,7 +12,7 @@ void main() {
   vec2 fakeUv = vec2( dot(x, v_normal), dot(y, v_normal)) * .495 + .5;
   vec4 img = texture2D(u_mt_black, fakeUv);
 
-  gl_FragColor.rgb = img.rgb * 1.1;
+  gl_FragColor.rgb = img.rgb;
   // gl_FragColor.rgb = vec3(fakeUv, 1.);
   gl_FragColor.a = 1.;
   // gl_FragColor = vec4(1., 0., 0., 1.);

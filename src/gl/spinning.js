@@ -1,54 +1,23 @@
 import { Group } from "three";
-import { Observe } from "../util/observe.js";
 
 import CoinMaterial from "./mat/coin";
 import spinMaterial from "./mat/spin";
-import skinMaterial from "./mat/skin";
-import skinAltMaterial from "./mat/skin-alt";
 
-export class Model extends Group {
+export class Spinning extends Group {
   constructor() {
     super();
 
     this.model = window.app.gl.assets.model;
     this.traverse();
 
-    this.add(this.pcs.figure);
-    this.add(this.pcs.sphere);
-
+    this.add(this.pcs.sphere, this.pcs.coin);
     this.pcs.sphere.visible = false;
-
-    this.addEvents();
-  }
-
-  addEvents() {
-    // data-gl-track="hero"
-    // data-gl-track="slider"
-    new Observe({
-      element: document.querySelector('[data-gl-track="hero"]'),
-    }).on("IN", () => {
-      this.pcs.figure.visible = true;
-      this.pcs.sphere.visible = false;
-    });
-
-    new Observe({
-      element: document.querySelector('[data-gl-track="slider"]'),
-    }).on("IN", () => {
-      this.pcs.figure.visible = false;
-      this.pcs.sphere.visible = true;
-    });
   }
 
   render(t, { ex, ey }) {
     // params
     let { speed } = window.app.scroll;
     speed = -speed * 0.003;
-
-    if (this.pcs) {
-      // rotate figure with mouse
-      this.rotation.x = -ey * 0.2;
-      this.rotation.y = ex * 0.2;
-    }
 
     if (this.pcs?.sphere) {
       // rotate sphere model with scroll speed
@@ -68,11 +37,13 @@ export class Model extends Group {
   }
 
   traverse() {
-    const [bone, model] = this.model.children;
+    const [char, model] = this.model.children;
 
     this.pcs = { spin: [] };
 
-    // TRAVERSE coin and spinner
+    // *** TRAVERSE coin and spinner
+    this.pcs.sphere = new Group();
+
     model.traverse((child) => {
       if (child.isMesh) {
         // console.log(child.name);
@@ -90,28 +61,10 @@ export class Model extends Group {
       }
     });
 
-    // TRAVERSE skinned mesh
-    bone.traverse((child) => {
-      if (child.isSkinnedMesh) {
-        // console.log("skin", child.name);
-        this.pcs[child.name.substr(0, 3)] = child;
-      } else {
-        // console.log("bone", child.name);
-      }
-    });
-
-    // FIGURE
-    this.pcs.ski.material = new skinMaterial();
-    this.pcs.bot.material = new skinAltMaterial();
-    this.pcs.figure = new Group();
-    this.pcs.figure.add(this.pcs.ski, this.pcs.bot);
-
-    // SPINNING
-    this.pcs.sphere = new Group();
-    this.pcs.sphere.add(this.pcs.coin, ...this.pcs.spin);
-
-    // color one of the spinners
+    this.pcs.sphere.add(...this.pcs.spin);
     this.pcs.spin[4].material = new CoinMaterial();
+
+    // console.log(this.pcs);
   }
 }
 

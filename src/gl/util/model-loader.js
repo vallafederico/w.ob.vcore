@@ -6,8 +6,10 @@ export default (url, id) => {
   return new Promise((resolve, reject) => {
     loader.load(url, (gltf) => {
       // const result = { model: gltf.scene };
-      const { scene } = gltf;
-      resolve(scene);
+      // console.log(gltf);
+      const { scene, animations } = gltf;
+      // window.gl.animations = animations;
+      resolve(gltf);
     });
   });
 };

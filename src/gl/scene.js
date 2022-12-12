@@ -1,7 +1,11 @@
-import { Scene } from "three";
+import { Scene, Group } from "three";
 import gsap from "gsap";
 
-import { Model } from "./model.js";
+import { Observe } from "../util/observe.js";
+import { Char } from "./char.js";
+import { Spinning } from "./spinning.js";
+
+import { Transform } from "../modules/animation/transform";
 
 export default class extends Scene {
   constructor() {
@@ -9,6 +13,41 @@ export default class extends Scene {
 
     this.create();
     this.initEvents();
+  }
+
+  create() {
+    this.ctrl = new Group();
+    this.ctrl.position.y = -1;
+
+    this.spinning = new Spinning();
+    this.char = new Char();
+
+    this.ctrl.add(this.spinning, this.char);
+    this.add(this.ctrl);
+
+    this.transform = new Transform({
+      el: document.querySelector('[data-gl-track="hero"]'),
+    });
+  }
+
+  render(t) {
+    // transform
+    this.transform.render();
+    this.ctrl.position.y = -1 + this.transform.perc;
+
+    // rotate mouse
+    this.ctrl.rotation.x = 0.2 - this.mouse.ey * 0.1;
+    this.ctrl.rotation.y = this.mouse.ex * 0.1;
+
+    // render children
+    if (this.spinning) this.spinning.render(t, this.mouse);
+    if (this.char) this.char.render(t, this.mouse, this.transform.perc);
+  }
+
+  resize() {
+    this.transform?.resize();
+    this.vp.w = window.innerWidth;
+    this.vp.h = window.innerHeight;
   }
 
   initEvents() {
@@ -29,25 +68,29 @@ export default class extends Scene {
       this.mouse.y = ((clientY / this.vp.h) * 2 - 1) * -1;
 
       gsap.to(this.mouse, {
-        duration: 1,
+        duration: 3,
         ex: this.mouse.x,
         ey: this.mouse.y,
         ease: "power3.out",
       });
     };
-  }
 
-  create() {
-    this.model = new Model();
-    this.add(this.model);
-  }
+    // data-gl-track="hero"
+    // data-gl-track="slider"
+    new Observe({
+      element: document.querySelector('[data-gl-track="hero"]'),
+    }).on("IN", () => {
+      this.char.visible = true;
 
-  render(t) {
-    if (this.model) this.model.render(t, this.mouse);
-  }
+      this.spinning.pcs.sphere.visible = false;
+    });
 
-  resize() {
-    this.vp.w = window.innerWidth;
-    this.vp.h = window.innerHeight;
+    new Observe({
+      element: document.querySelector('[data-gl-track="slider"]'),
+    }).on("IN", () => {
+      this.char.visible = false;
+
+      this.spinning.pcs.sphere.visible = true;
+    });
   }
 }

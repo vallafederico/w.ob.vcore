@@ -20,7 +20,7 @@ void main() {
   gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
   
   v_uv = uv;
-  v_normal = vec4(vec4(normal, 1.) * modelViewMatrix).xyz;
+  v_normal = normal;
   v_view = normalize(-gl_Position.xyz);
 
 
