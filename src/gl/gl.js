@@ -11,7 +11,9 @@ import { Post } from "./post.js";
 export default class Gl {
   constructor(sel) {
     this.vp = new Viewport(sel);
-    this.renderer = new WebGLRenderer({});
+    this.renderer = new WebGLRenderer({
+      // antialias: true,
+    });
 
     this.renderer.setPixelRatio(this.vp.pixelRatio);
     this.renderer.setSize(this.vp.w, this.vp.h);

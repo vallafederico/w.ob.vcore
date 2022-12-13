@@ -47,9 +47,14 @@ export class Char extends Group {
           o.material = this.holoMat;
         } else if (o.name === "room") {
           // console.log("room found");
-        } else if (o.name === "lights") {
+        } else if (o.name.substring(0, 6) === "lights") {
           console.log("lighs found");
-          o.material = new lightsMaterial();
+          // o.material = new lightsMaterial();
+          // o.material.wireframe = true;
+        } else if (o.name === "Cube") {
+          console.log("cube found");
+          // o.material = new lightsMaterial();
+          // o.material.wireframe = true;
         }
       }
     });
