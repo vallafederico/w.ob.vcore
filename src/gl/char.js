@@ -3,6 +3,7 @@ import { Group, AnimationMixer } from "three";
 import skinMaterial from "./mat/skin";
 import skinAltMaterial from "./mat/skin-alt";
 import hologramMaterial from "./mat/hologram";
+import lightsMaterial from "./mat/lights";
 
 export class Char extends Group {
   constructor() {
@@ -44,6 +45,11 @@ export class Char extends Group {
           o.material = altMaterial;
         } else if (o.name.substring(0, 4) === "hol_") {
           o.material = this.holoMat;
+        } else if (o.name === "room") {
+          // console.log("room found");
+        } else if (o.name === "lights") {
+          console.log("lighs found");
+          o.material = new lightsMaterial();
         }
       }
     });

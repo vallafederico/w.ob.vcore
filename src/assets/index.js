@@ -1,4 +1,4 @@
-import model from "./vcore-orrery-merged-v6.glb";
+import model from "./vcore-orrery-merged-v7.glb";
 import mt_gold from "./gold-metal-v0.png";
 import mt_black from "./black-matte-v0.png";
 import tx_faces from "./faces.png";
