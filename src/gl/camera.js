@@ -5,7 +5,7 @@ export default class extends PerspectiveCamera {
     fov = 70,
     aspect = window.innerWidth / window.innerHeight,
     near = 0.5,
-    far = 20
+    far = 40
   ) {
     super(fov, aspect, near, far);
   }
