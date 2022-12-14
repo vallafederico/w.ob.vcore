@@ -6,40 +6,53 @@
 
 ## Todo
 
-### TODO — design
+## TODO — design
 
-- [ ] hero section w/ text
+- [x] hero section w/ text — pending approval / pick
 - [ ] preloader w/loading + video
+- [ ] roadmap
 
-### TODO — webflow
+## TODO — webflow
 
-- [ ] masonry section
+- [x] masonry section
 
 - [ ] (mobile) menu
-- [ ] (mobile) footer
+- [x] (mobile) footer
 
-- [ ] preloader w/video
+- [ ] copy revision
+- [ ] adding animated icons to cards — WALLET CORRUPTED
 
-- [ ] privacy policy & cookie policy pages (maybe a single one?) @ross CMS? / External?
+## TODO — webgl
 
-- [ ] location based re-routing -[ ] /page — wrong location can't access
-
-### TODO — webgl
-
-- [ ] swap model (waiting 4 model)
+- [x] swap model (waiting 4 model)
 - [ ] transitions
-- [ ] shaders & post
-- [ ] ...
+- [x] shaders & post
+- [ ] transition smoothing
+- [x] hero environment
 
-### TODO — js
+## TODO — other
 
-- [ ] animations dom
-- [ ] animation text
+- [x] site by offbrand footer
+- [ ] site by offbrand CONSOLE
 
-### TO GET — external
+## TO GET — external
 
 - [ ] backers icons (svg) (ross/client)
+- [ ] faces to project on model (client)
 - [ ] team pictures (client)
 - [ ] newsletter post URL (client)
 - [ ] video preloader (client)
 - [ ] privacy policy & cookie policy (client) [pending decision]
+- [ ] which countries do we want to not show the website to?
+- [ ] confirm links on mobile
+
+- [ ] hero, preloader (video) animation
+- [ ] links
+- [ ] mobile menu
+- [ ] post, something to blend it together
+
+### QUESTIONS / DEPENDENCIES
+
+- [ ] privacy policy & cookie policy pages (maybe a single one?) @ross CMS? / External?
+- [ ] preloader w/video — NEEDS VIDEO
+- [ ] location based re-routing -[ ] /page — wrong location can't access — WHAT DO WE DO HERE? copy?
