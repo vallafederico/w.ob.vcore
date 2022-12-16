@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { assets } from "../../assets/";
 import loadTexture from "./texture-loader";
 import loadModel from "./model-loader";
+import { geoRedirect } from "../../modules/geolocation";
 
 export default class {
   constructor(data) {
@@ -11,6 +12,7 @@ export default class {
   }
 
   async load() {
+    if (geoRedirect()) return; // geo redirect
     console.time("load");
 
     const [model, mt_black, mt_gold, tx_faces, mt_metal] = await Promise.all([

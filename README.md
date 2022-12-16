@@ -9,8 +9,8 @@
 ## TODO — design
 
 - [x] hero section w/ text — pending approval / pick
-- [ ] preloader w/loading + video
-- [ ] roadmap
+- [x] preloader w/loading + video
+- [x] roadmap
 
 ## TODO — webflow
 
@@ -19,13 +19,16 @@
 - [ ] (mobile) menu
 - [x] (mobile) footer
 
-- [ ] copy revision
-- [ ] adding animated icons to cards — WALLET CORRUPTED
+- [x] copy revision
+- [x] adding animated icons to cards
+
+- [ ] geoblock CANADA + USA
+
+- [ ] roadmap section — PENDING APPROVAL
 
 ## TODO — webgl
 
 - [x] swap model (waiting 4 model)
-- [ ] transitions
 - [x] shaders & post
 - [ ] transition smoothing
 - [x] hero environment
@@ -38,13 +41,12 @@
 ## TO GET — external
 
 - [ ] backers icons (svg) (ross/client)
-- [ ] faces to project on model (client)
+- [x] faces to project on model (client)
 - [ ] team pictures (client)
-- [ ] newsletter post URL (client)
+- [x] newsletter post URL (client)
 - [ ] video preloader (client)
 - [ ] privacy policy & cookie policy (client) [pending decision]
-- [ ] which countries do we want to not show the website to?
-- [ ] confirm links on mobile
+- [x] which countries do we want to not show the website to? CANADA & USA
 
 - [ ] hero, preloader (video) animation
 - [ ] links
@@ -55,4 +57,4 @@
 
 - [ ] privacy policy & cookie policy pages (maybe a single one?) @ross CMS? / External?
 - [ ] preloader w/video — NEEDS VIDEO
-- [ ] location based re-routing -[ ] /page — wrong location can't access — WHAT DO WE DO HERE? copy?
+- [x] location based re-routing -[ ] /page — wrong location can't access — WHAT DO WE DO HERE? copy?
