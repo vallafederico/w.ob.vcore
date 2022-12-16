@@ -7,7 +7,8 @@ varying vec2 v_uv;
 varying vec3 v_normal;
 varying vec3 v_view;
 
-const float rgb_fac = .009;
+const float rgb_fac = .002;
+const float faces_fac = 0.1666666667;
 
 #include "../_/noise.glsl"
 
@@ -21,8 +22,8 @@ void main() {
 
   // image managing
   vec2 t_uv = vec2(
-    v_uv.x * .5 + u_face_swap, 
-    v_uv.y * .5
+    v_uv.x * faces_fac + u_face_swap * faces_fac, 
+    v_uv.y
   );
 
   // rgb image

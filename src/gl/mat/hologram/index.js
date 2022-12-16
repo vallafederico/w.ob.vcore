@@ -27,8 +27,8 @@ export default class extends ShaderMaterial {
 
     // swap faces
     setInterval(() => {
-      this.face_swap = Math.floor(Math.random() * 2);
-    }, 10000);
+      this.face_swap = Math.floor(Math.random() * 6);
+    }, 5000);
   }
 
   set time(t) {
@@ -36,7 +36,7 @@ export default class extends ShaderMaterial {
   }
 
   set face_swap(v) {
-    this.uniforms.u_face_swap.value = v * 0.5;
+    this.uniforms.u_face_swap.value = v;
   }
 
   set alpha(v) {
