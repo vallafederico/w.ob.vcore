@@ -10,7 +10,7 @@
 
 - [x] hero section w/ text — pending approval / pick
 - [x] preloader w/loading + video
-- [x] roadmap — PENDING APPROVAL
+- [x] roadmap
 
 ## TODO — webflow
 
@@ -22,15 +22,15 @@
 - [x] copy revision
 - [x] adding animated icons to cards
 
-- [ ] geoblock CANADA + USA [ TESTING ]
+- [x] geoblock CANADA + USA [ TESTING ]
 
-- [ ] roadmap section — PENDING APPROVAL
+- [x] roadmap section
+- [ ] style roadmap
 
 ## TODO — webgl
 
 - [x] swap model (waiting 4 model)
 - [x] shaders & post
-- [ ] transition smoothing
 - [x] hero environment
 
 ## TODO — other

@@ -71,7 +71,7 @@ export class Slider {
       ...config, // INIT config takes precedence
     };
 
-    console.log("Slider Configuration: ", this.config);
+    // console.log("Slider Configuration: ", this.config);
   }
 
   init() {
