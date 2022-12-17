@@ -28,7 +28,7 @@ export default class {
     tx_faces.flipY = false;
 
     this.fadeOut();
-    window.scroll(0, 0);
+
     // SPLIT MODEL HERE
     return {
       model: model.scene,

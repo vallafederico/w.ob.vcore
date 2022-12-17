@@ -10,7 +10,7 @@
 
 - [x] hero section w/ text — pending approval / pick
 - [x] preloader w/loading + video
-- [x] roadmap
+- [x] roadmap — PENDING APPROVAL
 
 ## TODO — webflow
 
@@ -22,7 +22,7 @@
 - [x] copy revision
 - [x] adding animated icons to cards
 
-- [ ] geoblock CANADA + USA
+- [ ] geoblock CANADA + USA [ TESTING ]
 
 - [ ] roadmap section — PENDING APPROVAL
 
@@ -36,7 +36,7 @@
 ## TODO — other
 
 - [x] site by offbrand footer
-- [ ] site by offbrand CONSOLE
+- [x] site by offbrand CONSOLE
 
 ## TO GET — external
 
@@ -48,13 +48,9 @@
 - [ ] privacy policy & cookie policy (client) [pending decision]
 - [x] which countries do we want to not show the website to? CANADA & USA
 
-- [ ] hero, preloader (video) animation
-- [ ] links
-- [ ] mobile menu
-- [ ] post, something to blend it together
-
 ### QUESTIONS / DEPENDENCIES
 
 - [ ] privacy policy & cookie policy pages (maybe a single one?) @ross CMS? / External?
 - [ ] preloader w/video — NEEDS VIDEO
-- [x] location based re-routing -[ ] /page — wrong location can't access — WHAT DO WE DO HERE? copy?
+- [x] location based re-routing
+- [x] /page — wrong location can't access — WHAT DO WE DO HERE? copy?

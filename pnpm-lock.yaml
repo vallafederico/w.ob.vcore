@@ -7,6 +7,7 @@ specifiers:
   esbuild-plugin-glsl-include: ^0.0.5
   gsap: npm:@gsap/shockingly@^3.11.3
   install: ^0.13.0
+  keen-slider: ^6.8.5
   three: ^0.146.0
   tiny-emitter: ^2.1.0
 
@@ -14,6 +15,7 @@ dependencies:
   '@studio-freight/lenis': 0.2.13
   gsap: /@gsap/shockingly/3.11.3
   install: 0.13.0
+  keen-slider: 6.8.5
   three: 0.146.0
   tiny-emitter: 2.1.0
 
@@ -280,6 +282,10 @@ packages:
   /install/0.13.0:
     resolution: {integrity: sha512-zDml/jzr2PKU9I8J/xyZBQn8rPCAY//UOYNmR01XwNwyfhEWObo2SWfSl1+0tm1u6PhxLwDnfsT/6jB7OUxqFA==}
     engines: {node: '>= 0.10'}
+    dev: false
+
+  /keen-slider/6.8.5:
+    resolution: {integrity: sha512-9yoosfffgTCrkmbX8kCUMWsn9KDgPSkxBof5/0yXde001D1xao7i9ppfxQCCK0MLnoCa+Rdssby0jFbTTUM4rw==}
     dev: false
 
   /three/0.146.0:

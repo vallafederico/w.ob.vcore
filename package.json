@@ -12,6 +12,7 @@
     "@studio-freight/lenis": "^0.2.13",
     "gsap": "npm:@gsap/shockingly@^3.11.3",
     "install": "^0.13.0",
+    "keen-slider": "^6.8.5",
     "three": "^0.146.0",
     "tiny-emitter": "^2.1.0"
   },

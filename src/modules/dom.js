@@ -1,11 +1,13 @@
 import { Text } from "./animation/text";
 import { Translate } from "./animation/translate";
 import { Alpha } from "./animation/alpha";
+import { Slider } from "./slider";
 
 export default class {
   constructor() {
     this.createText();
     this.createAnimation();
+    this.createSlider();
   }
 
   resize() {}
@@ -40,6 +42,11 @@ export default class {
     this.alpha = [...document.querySelectorAll('[data-a="alpha"]')].map(
       (el) => new Alpha({ element: el })
     );
+  }
+
+  createSlider() {
+    const el = document.querySelector("[data-slider='wrapper']");
+    if (el) this.slider = new Slider(el);
   }
 
   /* --  Pages */
