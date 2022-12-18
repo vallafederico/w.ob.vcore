@@ -5,9 +5,10 @@ export class Observe extends Emitter {
     super();
     this.element = element;
     this.config = {
-      root: config?.root || null,
-      margin: config?.margin || "10px",
-      threshold: config?.threshold || 0,
+      root: null,
+      margin: "10px",
+      threshold: 0,
+      ...config,
     };
 
     if (addClass !== undefined) this.addClass = addClass;

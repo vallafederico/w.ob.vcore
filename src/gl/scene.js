@@ -31,6 +31,58 @@ export default class extends Scene {
         bounds: [0.001, 0.9],
       },
     });
+
+    this.setSliderTriggers();
+  }
+
+  setSliderTriggers() {
+    const trigs = [...document.querySelectorAll("[data-slider-trigger]")];
+    this.slider = {
+      x: 0,
+      rz: 0,
+      z: 0,
+      isIn: false,
+    };
+
+    const pos = [
+        { x: 1, rz: -2, z: 0 },
+        { x: -1, rz: -4, z: 0.2 },
+        { x: 1, rz: -6, z: 0.5 },
+        { x: -1, rz: -8, z: 0.2 },
+      ],
+      resetPos = { x: 0, rz: 0, z: 0 };
+
+    const movePos = (val) => {
+      gsap.to(this.slider, {
+        duration: 0.8,
+        ease: "power3.out",
+        x: val.x || 0,
+        rz: val.rz || 0,
+        z: val.z || 0,
+      });
+    };
+
+    trigs.forEach((trig, i) => {
+      // trig.style.border = "1px solid red";
+
+      const ob = new Observe({
+        element: trig,
+        config: {
+          margin: "10%",
+          threshold: 1,
+        },
+      }).on("IN", () => {
+        movePos(pos[i]);
+      });
+
+      // console.log(ob.config.treshold);
+    });
+
+    new Observe({
+      element: document.querySelector("[data-gl-slidermvmt]"),
+    }).on("OUT", () => {
+      movePos({ x: 0, rz: 0, z: 0 });
+    });
   }
 
   render(t) {
@@ -39,8 +91,8 @@ export default class extends Scene {
     // this.tra.render();
 
     this.ctrl.position.y = -1 + this.transform.perc;
-
-    // this.ctrl.position.x = Math.sin(-this.tra.render() * 2 * Math.PI || 0);
+    this.ctrl.position.x = this.slider.x;
+    this.ctrl.position.z = this.slider.z;
 
     // rotate mouse
     this.ctrl.rotation.x = 0.2 - this.mouse.ey * 0.1;
@@ -49,7 +101,7 @@ export default class extends Scene {
     // rotate with speed
     let { y } = window.app.scroll;
     y = -y * 0.0008;
-    this.spinning.rotation.z = y;
+    this.spinning.rotation.z = y + this.slider.rz;
 
     // render children
     if (this.spinning) this.spinning.render(t, this.mouse);
@@ -99,7 +151,7 @@ export default class extends Scene {
     });
 
     new Observe({
-      element: document.querySelector('[data-gl-track="slider"]'),
+      element: document.querySelector("[data-gl-slidermvmt]"),
     }).on("IN", () => {
       this.char.visible = false;
 

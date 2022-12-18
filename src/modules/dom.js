@@ -47,7 +47,7 @@ export default class {
       (el) => new Alpha({ element: el })
     );
 
-    console.log(document.querySelectorAll('[data-a-scale="y"]'));
+    // console.log(document.querySelectorAll('[data-a-scale="y"]'));
     this.scale = [...document.querySelectorAll('[data-a-scale="y"]')].map(
       (el) => new Scale({ element: el })
     );
