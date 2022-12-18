@@ -16,7 +16,7 @@
 
 - [x] masonry section
 
-- [ ] (mobile) menu
+- [x] (mobile) menu
 - [x] (mobile) footer
 
 - [x] copy revision
@@ -25,7 +25,8 @@
 - [x] geoblock CANADA + USA [ TESTING ]
 
 - [x] roadmap section
-- [ ] style roadmap
+- [x] style roadmap
+- [x] sticky slider
 
 ## TODO — webgl
 

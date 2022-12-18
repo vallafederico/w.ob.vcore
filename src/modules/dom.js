@@ -2,12 +2,15 @@ import { Text } from "./animation/text";
 import { Translate } from "./animation/translate";
 import { Alpha } from "./animation/alpha";
 import { Slider } from "./slider";
+import { Mobile } from "./mobile";
 
 export default class {
   constructor() {
     this.createText();
     this.createAnimation();
     this.createSlider();
+
+    this.mobile = new Mobile();
   }
 
   resize() {}

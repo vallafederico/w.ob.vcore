@@ -106,6 +106,15 @@ export class Slider {
     if (dotsWrapper) this.createDots(dotsWrapper);
 
     this.onStart(0);
+
+    this.slider.slides.forEach((slide, i) => {
+      const item = slide.querySelector("[data-active]");
+      if (item && item.dataset.active === "true") {
+        slide.style.filter = "invert(1)";
+      }
+    });
+
+    this.slider.moveToIdx(2);
   }
 
   createArrows(left, right) {
@@ -192,7 +201,7 @@ function insertItem(wrapper, target) {
   const items = [...wrapper.querySelectorAll("[data-insert]")];
 
   items.forEach((item) => {
-    console.log(item, item.dataset.insert);
+    // console.log(item, item.dataset.insert);
     const clone = item.cloneNode(true);
 
     // insert html before target
