@@ -9,7 +9,7 @@ export class Mobile {
       isOpen: false,
     };
 
-    console.log("mobile", this.wrapper, this.btns);
+    // console.log("mobile", this.wrapper, this.btns);
     this.init();
   }
 

@@ -3,6 +3,7 @@ import { Translate } from "./animation/translate";
 import { Alpha } from "./animation/alpha";
 import { Slider } from "./slider";
 import { Mobile } from "./mobile";
+import { Scale } from "./animation/scale";
 
 export default class {
   constructor() {
@@ -44,6 +45,11 @@ export default class {
 
     this.alpha = [...document.querySelectorAll('[data-a="alpha"]')].map(
       (el) => new Alpha({ element: el })
+    );
+
+    console.log(document.querySelectorAll('[data-a-scale="y"]'));
+    this.scale = [...document.querySelectorAll('[data-a-scale="y"]')].map(
+      (el) => new Scale({ element: el })
     );
   }
 

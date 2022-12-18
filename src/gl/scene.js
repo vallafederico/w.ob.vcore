@@ -5,7 +5,7 @@ import { Observe } from "../util/observe.js";
 import { Char } from "./char.js";
 import { Spinning } from "./spinning.js";
 
-import { Transform } from "../modules/animation/transform";
+import { Transform } from "../modules/animation/transform.js";
 
 export default class extends Scene {
   constructor() {
@@ -27,13 +27,20 @@ export default class extends Scene {
 
     this.transform = new Transform({
       el: document.querySelector('[data-gl-track="hero"]'),
+      config: {
+        bounds: [0.001, 0.9],
+      },
     });
   }
 
   render(t) {
     // transform
     this.transform.render();
+    // this.tra.render();
+
     this.ctrl.position.y = -1 + this.transform.perc;
+
+    // this.ctrl.position.x = Math.sin(-this.tra.render() * 2 * Math.PI || 0);
 
     // rotate mouse
     this.ctrl.rotation.x = 0.2 - this.mouse.ey * 0.1;
@@ -51,6 +58,7 @@ export default class extends Scene {
 
   resize() {
     this.transform?.resize();
+    this.tra?.resize();
     this.vp.w = window.innerWidth;
     this.vp.h = window.innerHeight;
   }

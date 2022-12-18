@@ -98,19 +98,30 @@ function returnSplit(element) {
 }
 
 function splitChar(el) {
-  return new SplitText(splitLine(el), {
+  const chars = new SplitText(el, {
+    type: "chars",
+  }).chars;
+
+  return new SplitText(chars, {
     type: "chars",
   }).chars;
 }
+
 function splitWord(el) {
-  return new SplitText(splitLine(el), {
+  const words = new SplitText(el, {
+    type: "words",
+  }).words;
+
+  return new SplitText(words, {
     type: "words",
   }).words;
 }
+
 function splitLine(el) {
   const line = new SplitText(el, {
     type: "lines",
   }).lines;
+
   return new SplitText(line, {
     type: "lines",
   }).lines;

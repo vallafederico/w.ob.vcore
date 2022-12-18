@@ -3,6 +3,7 @@ uniform float opacity;
 uniform sampler2D tDiffuse;
 uniform float u_dark;
 uniform float u_time;
+uniform float u_intro;
 
 
 varying vec2 vUv;
@@ -20,18 +21,9 @@ void main() {
     // mix
     vec3 final_col = mix(tx_scene, tx_scene_dark, u_dark);
 
-    // float ns = cnoise(
-    //     vec3(
-    //     sin(vUv.x * 80.), 
-    //     (vUv.y * 80.), 
-    //     u_time * 10.
-    //     )
-    // );
-
-    // final_col += ns * .05;
+    final_col = mix(COL_BG, final_col, u_intro); // intro fade
 
 
     gl_FragColor.rgb = final_col;
-    // gl_FragColor.rgb = vec3(ns);
     gl_FragColor.a = 1.;
 }

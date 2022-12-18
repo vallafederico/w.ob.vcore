@@ -9,6 +9,8 @@ export default class {
   constructor(data) {
     this.data = data;
     this.wrapper = document.querySelector('[data-loader="w"]');
+    this.page = document.querySelector('[data-page="w"]');
+    gsap.set(this.page, { autoAlpha: 0 });
   }
 
   async load() {
@@ -23,9 +25,9 @@ export default class {
       loadTexture(assets.mt_metal),
     ]);
 
-    console.timeEnd("load");
-
     tx_faces.flipY = false;
+
+    console.timeEnd("load");
 
     this.fadeOut();
 
@@ -43,10 +45,18 @@ export default class {
   fadeOut() {
     gsap.to(this.wrapper, {
       duration: 0.5,
-      delay: 0.2,
+      delay: 0,
       autoAlpha: 0,
       onComplete: () => {
         this.wrapper.remove();
+
+        window.scrollTo(0, 0);
+        gsap.to(this.page, {
+          duration: 0.4,
+          delay: 0.1,
+          autoAlpha: 1,
+          ease: "expo.in",
+        });
       },
     });
   }

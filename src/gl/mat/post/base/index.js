@@ -10,6 +10,7 @@ export const CopyShader = {
     opacity: { value: 1.0 },
     u_dark: { value: 0.0 },
     u_time: { value: 0.0 },
+    u_intro: { value: 0.0 },
   },
   vertexShader,
   fragmentShader,
@@ -18,12 +19,14 @@ export const CopyShader = {
 export class Shader extends ShaderPass {
   constructor() {
     super(CopyShader);
+
+    this.open();
   }
 
   set dark(value) {
     if (this.toDark) this.toDark.kill();
     this.toDark = gsap.to(this.uniforms.u_dark, {
-      duration: 0.8,
+      duration: 0.4,
       value,
       ease: "power3.out",
     });
@@ -31,5 +34,14 @@ export class Shader extends ShaderPass {
 
   set time(value) {
     this.uniforms.u_time.value = value;
+  }
+
+  open() {
+    gsap.to(this.uniforms.u_intro, {
+      duration: 0.8,
+      value: 1,
+      delay: 0.4,
+      ease: "expo.in",
+    });
   }
 }

@@ -16,6 +16,7 @@ class App {
 
   init() {
     this.scroll = new Scroll();
+
     this.dom = new Dom();
 
     this.gl = new Gl("[data-gl='c']");
