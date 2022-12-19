@@ -7,7 +7,7 @@ export class Observe extends Emitter {
     this.config = {
       root: null,
       margin: "10px",
-      threshold: 0,
+      threshold: 0.1,
       ...config,
     };
 

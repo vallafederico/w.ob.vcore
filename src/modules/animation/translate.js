@@ -8,7 +8,7 @@ export class Translate extends Observe {
       config: {
         root: null,
         margin: "10px",
-        threshold: 0.2,
+        threshold: 0.4,
       },
       addClass: "active",
     });

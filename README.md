@@ -55,3 +55,8 @@
 - [ ] preloader w/video — NEEDS VIDEO
 - [x] location based re-routing
 - [x] /page — wrong location can't access — WHAT DO WE DO HERE? copy?
+
+## Pre Launch
+
+- [ ] OG IMages
+- [ ] Meta titles + descriptions

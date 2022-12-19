@@ -45,10 +45,10 @@ export default class extends Scene {
     };
 
     const pos = [
-        { x: 1, rz: -2, z: 0 },
-        { x: -1, rz: -4, z: 0.2 },
-        { x: 1, rz: -6, z: 0.5 },
-        { x: -1, rz: -8, z: 0.2 },
+        { x: 0.7, rz: -2, z: 0 },
+        { x: -0.7, rz: -4, z: 0.2 },
+        { x: 0.7, rz: -6, z: 0.5 },
+        { x: -0.7, rz: -8, z: 0.2 },
       ],
       resetPos = { x: 0, rz: 0, z: 0 };
 
