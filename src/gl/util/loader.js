@@ -9,8 +9,15 @@ export default class {
   constructor(data) {
     this.data = data;
     this.wrapper = document.querySelector('[data-loader="w"]');
+
     this.page = document.querySelector('[data-page="w"]');
     gsap.set(this.page, { autoAlpha: 0 });
+
+    this.video = document.querySelector('[data-loader="video"]');
+    this.video.addEventListener("ended", () => {});
+    this.video.play();
+
+    // console.log(this.video);
   }
 
   async load() {
@@ -40,6 +47,17 @@ export default class {
       tx_faces,
       mt_metal,
     };
+  }
+
+  fadeVideo() {
+    gsap.to(this.video, {
+      duration: 0.5,
+      delay: 0,
+      autoAlpha: 0,
+      onComplete: () => {
+        this.video.remove();
+      },
+    });
   }
 
   fadeOut() {

@@ -45,16 +45,17 @@ export default class extends Scene {
     };
 
     const pos = [
-        { x: 0.7, rz: -2, z: 0 },
-        { x: -0.7, rz: -4, z: 0.2 },
-        { x: 0.7, rz: -6, z: 0.5 },
-        { x: -0.7, rz: -8, z: 0.2 },
+        { d: 1.2, x: 0.7, rz: -2, z: 0 },
+        { d: 1.2, x: -0.7, rz: -4, z: 0.2 },
+        { d: 1.2, x: 0.7, rz: -6, z: 0.5 },
+        { d: 1.2, x: -0.7, rz: -8, z: 0.2 },
       ],
-      resetPos = { x: 0, rz: 0, z: 0 };
+      resetPos = { d: 1.2, x: 0, rz: 0, z: 0 };
 
     const movePos = (val) => {
-      gsap.to(this.slider, {
-        duration: 0.8,
+      if (this.sliderAnimation) this.sliderAnimation.kill();
+      this.sliderAnimation = gsap.to(this.slider, {
+        duration: val.d || 1.2,
         ease: "power3.out",
         x: val.x || 0,
         rz: val.rz || 0,
@@ -144,17 +145,20 @@ export default class extends Scene {
     // data-gl-track="slider"
     new Observe({
       element: document.querySelector('[data-gl-track="hero"]'),
-    }).on("IN", () => {
-      this.char.visible = true;
-
-      this.spinning.pcs.sphere.visible = false;
-    });
+    })
+      .on("IN", () => {
+        this.char.visible = true;
+        this.spinning.pcs.sphere.visible = false;
+      })
+      .on("OUT", () => {
+        this.char.visible = false;
+        this.spinning.pcs.sphere.visible = false;
+      });
 
     new Observe({
       element: document.querySelector("[data-gl-slidermvmt]"),
     }).on("IN", () => {
       this.char.visible = false;
-
       this.spinning.pcs.sphere.visible = true;
     });
   }

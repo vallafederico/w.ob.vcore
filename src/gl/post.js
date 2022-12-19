@@ -43,6 +43,9 @@ export class Post extends EffectComposer {
     // dark section as cards background
     new Observe({
       element: document.querySelector('[data-gl-track="cards"]'),
+      config: {
+        threshold: 0,
+      },
     })
       .on("IN", () => {
         // console.log("in");
@@ -55,6 +58,9 @@ export class Post extends EffectComposer {
 
     new Observe({
       element: document.querySelector('[data-gl-track="footer"]'),
+      config: {
+        threshold: 0,
+      },
     })
       .on("IN", () => {
         // console.log("in");
