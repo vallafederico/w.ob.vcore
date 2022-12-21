@@ -56,6 +56,9 @@ export default class {
   createSlider() {
     const el = document.querySelector("[data-slider='wrapper']");
     if (el) this.slider = new Slider(el);
+
+    const elLeaders = document.querySelector("[data-leader='wrapper']");
+    if (elLeaders) this.slider = new Slider(elLeaders);
   }
 
   /* --  Pages */

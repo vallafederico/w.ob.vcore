@@ -1,6 +1,6 @@
 import { serve, build } from "esbuild";
 import { glsl } from "esbuild-plugin-glsl-include";
-import fse from "fs-extra";
+// import fse from "fs-extra";
 
 /* - Setup */
 const env = process.env.NODE_ENV;
