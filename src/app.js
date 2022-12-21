@@ -16,19 +16,7 @@ class App {
 
   init() {
     this.scroll = new Scroll();
-
-    // window.addEventListener("editorToggle", () => {
-    //   if (window.isEditorView) {
-    //     console.log("editor view triggered");
-    //     this.scroll.destroy();
-    //   } else {
-    //     console.log("editor view untriggered");
-    //     this.scroll = new Scroll();
-    //   }
-    // });
-
     this.dom = new Dom();
-
     this.gl = new Gl("[data-gl='c']");
 
     this.initEvents();
@@ -70,8 +58,16 @@ function printSignature() {
 // editor view
 function addStopTrigger() {
   const btn = document.querySelector(".w-editor-bem-EditSiteButton");
+  const bar = document.querySelector(".w-editor-bem-EditorMainMenu");
   if (btn) {
     btn.addEventListener("click", () => {
+      console.log("stopped the f'in scroll because editor is open");
+      window.app.scroll.destroy();
+    });
+  }
+
+  if (bar) {
+    bar.addEventListener("click", () => {
       console.log("stopped the f'in scroll because editor is open");
       window.app.scroll.destroy();
     });
