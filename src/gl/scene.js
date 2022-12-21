@@ -91,7 +91,7 @@ export default class extends Scene {
     this.transform.render();
     // this.tra.render();
 
-    this.ctrl.position.y = -1 + this.transform.perc;
+    this.ctrl.position.y = (-1 + this.transform.perc) * 0.8;
     this.ctrl.position.x = this.slider.x;
     this.ctrl.position.z = this.slider.z;
 
