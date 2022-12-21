@@ -1,5 +1,4 @@
 import { WebGLRenderer } from "three";
-// import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 
 import Loader from "./util/loader.js";
 import Viewport from "./viewport.js";
@@ -23,10 +22,6 @@ export default class Gl {
     this.camera = this.vp.camera = new Camera();
 
     this.camera.position.set(0, 0, 2);
-    // controls
-    // this.controls = new OrbitControls(this.camera, document.body);
-    // this.controls.minDistance = 2;
-    // this.controls.maxDistance = 2;
 
     this.paused = false;
     this.time = 0;
@@ -67,8 +62,6 @@ export default class Gl {
   render() {
     if (this.paused) return;
     this.time += 0.01;
-
-    // this.controls?.update();
 
     if (this.scene && this.scene.render) this.scene.render(this.time);
 
