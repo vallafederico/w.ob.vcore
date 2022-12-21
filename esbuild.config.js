@@ -15,6 +15,7 @@ const SETTINGS = {
   bundle: true,
   sourcemap: !production,
   loader: { ".png": "dataurl", ".webp": "dataurl", ".glb": "dataurl" },
+  minify: true,
 };
 
 /* -- Plugins */

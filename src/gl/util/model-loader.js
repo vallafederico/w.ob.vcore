@@ -1,4 +1,9 @@
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+// import { DRACOLoader } from "three/addons/loaders/DRACOLoader.js";
+
+// const dracoLoader = new DRACOLoader();
+// dracoLoader.setDecoderPath("js/libs/draco/");
+// dracoLoader.setDecoderConfig({ type: "js" });
 
 const loader = new GLTFLoader();
 
@@ -13,21 +18,3 @@ export default (url, id) => {
     });
   });
 };
-
-// import loadModel from '../js/utils/model-loader.js'
-
-// this.model = await this.createModel();
-// this.model.material = this.material;
-// this.scene.add(this.model)
-
-// async createModel() {
-//     let { model } = await loadModel( MODEL_URL );
-//     return model.children[0];
-//   }
-
-// gltf.scene.traverse(o => {
-//       if(o.isMesh) {
-//         o.material = this.material;
-//         this.scene.add(o);
-//       }
-//     })
