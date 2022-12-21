@@ -30,9 +30,7 @@ export default class {
         loadTexture(assets.mt_gold),
         loadTexture(assets.tx_faces),
         loadTexture(assets.mt_metal),
-        this.videoCookie
-          ? this.fadeVideoIn()
-          : new Promise((resolve) => resolve()),
+        this.videoCookie ? this.fadeVideoIn() : this.jumpVideo(),
       ]);
 
     tx_faces.flipY = false;
@@ -58,16 +56,21 @@ export default class {
     });
   }
 
-  fadeVideo() {
-    gsap.to(this.video, {
-      duration: 0.5,
-      delay: 0,
-      autoAlpha: 0,
-      onComplete: () => {
-        this.video.remove();
-      },
-    });
+  async jumpVideo() {
+    this.video.remove();
+    new Promise((resolve) => resolve());
   }
+
+  // fadeVideo() {
+  //   gsap.to(this.video, {
+  //     duration: 0.5,
+  //     delay: 0,
+  //     autoAlpha: 0,
+  //     onComplete: () => {
+  //       this.video.remove();
+  //     },
+  //   });
+  // }
 
   fadeOut() {
     gsap.to(this.wrapper, {
