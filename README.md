@@ -60,3 +60,6 @@
 
 - [ ] OG IMages
 - [ ] Meta titles + descriptions
+
+◦
+•
