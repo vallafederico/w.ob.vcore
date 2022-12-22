@@ -1,78 +1,73 @@
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1em;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #111111;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  --black: #0c0c0c;
+  --white: #ffffff;
 }
-
-body {
-  min-height: var(--100vh);
-  font-size: 16px;
-
-  font-weight: 400;
+.FULLPAGEWRAPPER,
+body,
+html {
+  overscroll-behavior: none;
 }
-
-.sec {
-  min-height: 80vh;
-  /* border: 1px solid blue; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+body,
+h1,
+h2,
+h3,
+h4,
+html,
+p {
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
-
-.tracking {
-  min-height: 100vh;
-  /* border: 1px solid red; */
+[data-selectable] {
+  user-select: text;
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
 }
-
-/* TEMP -- text animation */
-.flex {
-  display: flex;
+.team-img-w {
+  aspect-ratio: 0.7/1;
 }
-
-.center {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+[data-slider="container"] {
+  position: relative;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -khtml-user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
 }
-
-.center p {
-  font-size: 14px;
-  font-weight: 400;
-  max-width: 50ch;
+[data-slider="container"] > div {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
 }
-
-.center h1 {
-  font-size: 4vw;
-  font-weight: 400;
-  line-height: 1em;
+.w-editor [data-loader="w"] {
+  display: none;
 }
-
-.center h2 {
-  font-size: 2vw;
-  font-weight: 400;
-  line-height: 1em;
+svg {
+  fill: var(--white);
 }
-
-/* TEMP -- nav */
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 2rem;
-  height: 10vh;
-
-  position: fixed;
-  top: 0px;
-  width: 20%;
-  box-sizing: content-box;
+[data-a="char"] div,
+[data-a="line"] div,
+[data-a="word"] div {
+  overflow: hidden;
+  box-sizing: border-box;
+  display: inline-block;
+  line-height: 0.2em;
+}
+[data-a="char"] div div,
+[data-a="line"] div div,
+[data-a="word"] div div {
+  box-sizing: border-box;
+  display: inline-block;
+  line-height: 1.1em;
+}
+[data-a="down"],
+[data-a="left"],
+[data-a="right"] {
+  overflow: hidden;
 }

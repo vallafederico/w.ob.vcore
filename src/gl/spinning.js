@@ -3,6 +3,8 @@ import { Group } from "three";
 import CoinMaterial from "./mat/coin";
 import spinMaterial from "./mat/spin";
 
+import { isMobile } from "../util/agents";
+
 export class Spinning extends Group {
   constructor() {
     super();
@@ -10,18 +12,25 @@ export class Spinning extends Group {
     this.model = window.app.gl.assets.model;
     this.traverse();
 
+    this.speedFactor = isMobile() ? 1 : 0.5;
+
     this.add(this.pcs.sphere, this.pcs.coin);
     this.pcs.sphere.visible = false;
   }
 
   render(t, { ex, ey }) {
+    const time = t * this.speedFactor;
     if (this.pcs?.sphere) {
       // spin coin
       this.pcs.coin.rotation.set(t, Math.sin(t) * 0.4, t);
       // spin armillary
       this.pcs.spin.forEach((child, i) => {
         const { x, y, z, rand } = child.rf;
-        child.rotation.set(x * (rand + t), y * (rand + t), z * (rand + t));
+        child.rotation.set(
+          x * (rand + time),
+          y * (rand + time),
+          z * (rand + time)
+        );
       });
     }
   }
