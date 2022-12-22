@@ -21,7 +21,7 @@ export class Transform {
 
   render() {
     let val = map(
-      window.app.scroll.y, // value
+      window?.app?.scroll?.y || 0, // value
       this.bounds.top, // low1
       this.bounds.bottom, // high1
       this.config.bounds[0],

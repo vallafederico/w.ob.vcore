@@ -48,8 +48,18 @@ export default class {
     );
 
     // console.log(document.querySelectorAll('[data-a-scale="y"]'));
-    this.scale = [...document.querySelectorAll('[data-a-scale="y"]')].map(
-      (el) => new Scale({ element: el })
+
+    // this.scale = new Scale({
+    //   wrapper: document.querySelector("[data-gl-slider]"),
+    //   element: document.querySelector('[data-a-scale="y"]'),
+    // });
+
+    this.scale = [...document.querySelectorAll("[data-gl-slider]")].map(
+      (el) =>
+        new Scale({
+          wrapper: el,
+          element: el.querySelector('[data-a-scale="y"]'),
+        })
     );
   }
 
@@ -59,6 +69,12 @@ export default class {
 
     const elLeaders = document.querySelector("[data-leader='wrapper']");
     if (elLeaders) this.slider = new Slider(elLeaders);
+  }
+
+  render() {
+    this.scale?.forEach((it) => {
+      it.render();
+    });
   }
 
   /* --  Pages */

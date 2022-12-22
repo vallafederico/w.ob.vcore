@@ -1,12 +1,15 @@
 import gsap from "gsap";
-import { Observe } from "../../util/observe";
+import { Transform } from "./transform";
+import { map, clamp } from "../../util/math.js";
 
-export class Scale extends Observe {
-  constructor({ element }) {
+export class Scale extends Transform {
+  constructor({ element, wrapper }) {
     super({
-      element,
+      el: wrapper,
     });
+
     this.element = element;
+    this.wrapper = wrapper;
 
     gsap.set(this.element, {
       scaleY: 0,
@@ -14,19 +17,18 @@ export class Scale extends Observe {
     });
   }
 
-  isIn() {
-    this.animation = gsap.to(this.element, {
-      scaleY: 1,
-      duration: 1.8,
-      delay: 0.2,
-      ease: "expo.out",
-    });
-  }
+  render() {
+    let val = map(
+      window?.app?.scroll?.y || 0, // value
+      this.bounds.top, // low1
+      this.bounds.bottom, // high1
+      this.config.bounds[0],
+      this.config.bounds[1] // low2, high2
+    );
 
-  isOut() {
-    if (this.animation) this.animation.kill();
-    gsap.set(this.element, {
-      scaleY: 0,
-    });
+    val = clamp(0, 1, val);
+    this.perc = val;
+
+    this.element.style.transform = `scaleY(${val * 2})`;
   }
 }

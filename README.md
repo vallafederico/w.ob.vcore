@@ -77,6 +77,10 @@
 
 - [x] On cards (in By the Numbers) can we make the bottom font size bigger to not have so much dead space or make it so hard to read on desktop?
 - [x] On data cards, for cards that have no graphics, can we try playing with a reverse color? (White box, black text?) The thought is that they look “unfinished” with the spacing being empty and a change like that might show it’s intentional design
+- [x] **(@AE)** For 18+ Years Online, can we add a timeline animation as users scroll? (Starting 2004 and going to Present.)
+- [x] **(@AE)** On 1,000,000 DAU graphic, can the IMVU circle be made larger to better show the size differential?
+- [x] Swap 30,000,000 virtual w/ native crypto wallets boxes (Native Crypto Wallets larger, Digital Transactions smaller; and swap image between them.)
+- [x] **(@AE)** Add token icons (VCORE + 1 VCOIN) to the tokens going into wallet
 
 ### VCORE FEATURES
 
@@ -104,10 +108,7 @@
 - [ ] Is it possible to go with one face instead and closer map it to the 3D so it looks more overlaid on the 3D face? Some of the faces look too big for the avatar and are too wide; it would look better with fewer that look tighter to face vs more that don’t
 
 - [ ] On VCORE Features when scrolling through the feature list, the scrolling line on the side fully loads when you get to the section and you have to keep scrolling without indication to progress. Can the line scroll correctly (so that it starts at the top, as you scroll down to next card the line fills in, etc.)
-- [ ] **(@AE)** For 18+ Years Online, can we add a timeline animation as users scroll? (Starting 2004 and going to Present.)
-- [ ] **(@AE)** On 1,000,000 DAU graphic, can the IMVU circle be made larger to better show the size differential?
+
 - [ ] On mobile, is it possible to stretch the image more vertical based so there isn’t such a big gap on top and bottom?
-- [ ] Swap 30,000,000 virtual w/ native crypto wallets boxes (Native Crypto Wallets larger, Digital Transactions smaller; and swap image between them.) - **PENDING ADDITIONAL LOTTIE**
-- [ ] **(@AE)** Add token icons (VCORE + 1 VCOIN) to the tokens going into wallet
 
 - [ ] For the face holograms remove the shadow/black elements and stick with the lines, the glow + shadows are distracting — **[not clear] can you explaon more? thanks!**
