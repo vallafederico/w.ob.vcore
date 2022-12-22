@@ -16,7 +16,7 @@ const float faces_fac = 0.1666666667;
 void main() {
   float re_time = u_time * 2.;
   float circ_grad = smoothstep(
-    .8, .1, 
+    .6, .1, 
     distance(v_uv, vec2(.5))
   );
 
@@ -37,7 +37,7 @@ void main() {
   float scanlines = step(.2, fract((v_uv.y + u_time) * 60.));
   float ns = cnoise(vec3(v_uv.x * 2., v_uv.y * 3., re_time)) * 1. - circ_grad;
 
-  float imga = texture2D(u_tx_faces, t_uv).a * (circ_grad * scanlines) + (ns * circ_grad);  
+  float imga = texture2D(u_tx_faces, t_uv).a * (circ_grad * scanlines) ;  
 
 
   gl_FragColor.rgb = imgrgb;

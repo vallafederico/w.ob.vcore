@@ -26,7 +26,7 @@ export class Post extends EffectComposer {
       new Vector2(window.innerWidth, window.innerHeight),
       3, // strength
       0.05, // radius
-      0.5 // threshold
+      0.8 // threshold
     );
 
     this.addPass(this.bloomPass);

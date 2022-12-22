@@ -68,6 +68,12 @@
 
 ### STARTING AVATAR ANIMATION
 
+- [x] Some of the faces on the holographic overlay could be tightened up
+
+- [x] Is it possible to go with one face instead and closer map it to the 3D so it looks more overlaid on the 3D face? Some of the faces look too big for the avatar and are too wide; it would look better with fewer that look tighter to face vs more that don’t
+
+- [ ] For the face holograms remove the shadow/black elements and stick with the lines, the glow + shadows are distracting — **[not clear] can you explaon more? thanks!**
+
 ### SITE MENU
 
 - [x] VCORE title on top left - is it possible give it a little of the color (gold) at start, turn it to white once scrolled? — WIP
@@ -81,11 +87,13 @@
 - [x] **(@AE)** On 1,000,000 DAU graphic, can the IMVU circle be made larger to better show the size differential?
 - [x] Swap 30,000,000 virtual w/ native crypto wallets boxes (Native Crypto Wallets larger, Digital Transactions smaller; and swap image between them.)
 - [x] **(@AE)** Add token icons (VCORE + 1 VCOIN) to the tokens going into wallet
+- [ ] On mobile, is it possible to stretch the image more vertical based so there isn’t such a big gap on top and bottom?
 
 ### VCORE FEATURES
 
 - [x] Can we slow the spinning rings on desktop down to the same speed on mobile?
 - [x] On VCORE Features text (Buy sell NFTs, Rewarding Users, etc.) can body paragraph text be equalized? (vs 1st paragraph being large text, 2nd being small text)
+- [x] On VCORE Features when scrolling through the feature list, the scrolling line on the side fully loads when you get to the section and you have to keep scrolling without indication to progress. Can the line scroll correctly (so that it starts at the top, as you scroll down to next card the line fills in, etc.)
 
 ### ROADMAP
 
@@ -101,14 +109,3 @@
 ### FOOTER
 
 - [x] Change “Stay Updated” in footer to “Subscribe to Newsletter”
-
-## WIP
-
-- [ ] Some of the faces on the holographic overlay could be tightened up
-- [ ] Is it possible to go with one face instead and closer map it to the 3D so it looks more overlaid on the 3D face? Some of the faces look too big for the avatar and are too wide; it would look better with fewer that look tighter to face vs more that don’t
-
-- [ ] On VCORE Features when scrolling through the feature list, the scrolling line on the side fully loads when you get to the section and you have to keep scrolling without indication to progress. Can the line scroll correctly (so that it starts at the top, as you scroll down to next card the line fills in, etc.)
-
-- [ ] On mobile, is it possible to stretch the image more vertical based so there isn’t such a big gap on top and bottom?
-
-- [ ] For the face holograms remove the shadow/black elements and stick with the lines, the glow + shadows are distracting — **[not clear] can you explaon more? thanks!**
