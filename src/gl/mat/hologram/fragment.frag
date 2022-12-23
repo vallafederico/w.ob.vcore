@@ -8,10 +8,9 @@ varying vec3 v_normal;
 varying vec3 v_view;
 
 const float rgb_fac = .002;
-const float faces_fac = 0.1666666667;
+const float faces_fac =  0.1111111111 ; // 0.1666666667
 
 #include "../_/noise.glsl"
-
 
 void main() {
   float re_time = u_time * 2.;
@@ -42,7 +41,6 @@ void main() {
 
   gl_FragColor.rgb = imgrgb;
   gl_FragColor.a = (imga * 2. * circ_grad) - u_alpha;
-  // gl_FragColor.a = imga * (20. - u_alpha);
 }
  
 
