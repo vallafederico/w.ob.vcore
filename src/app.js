@@ -2,7 +2,7 @@ import Dom from "./modules/dom";
 import Viewport from "./modules/viewport";
 import Scroll from "./modules/scroll";
 import Gl from "./gl/gl";
-
+console.log("app");
 class App {
   constructor() {
     this.body = document.querySelector("body");

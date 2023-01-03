@@ -61,9 +61,6 @@
 - [ ] OG IMages
 - [ ] Meta titles + descriptions
 
-◦
-•
-
 ## Client Comms
 
 ### STARTING AVATAR ANIMATION
@@ -72,7 +69,7 @@
 
 - [x] Is it possible to go with one face instead and closer map it to the 3D so it looks more overlaid on the 3D face? Some of the faces look too big for the avatar and are too wide; it would look better with fewer that look tighter to face vs more that don’t
 
-- [ ] For the face holograms remove the shadow/black elements and stick with the lines, the glow + shadows are distracting — **[not clear] can you explaon more? thanks!**
+- [x] For the face holograms remove the shadow/black elements and stick with the lines, the glow + shadows are distracting — **[not clear] can you explaon more? thanks!**
 
 ### SITE MENU
 
@@ -87,7 +84,7 @@
 - [x] **(@AE)** On 1,000,000 DAU graphic, can the IMVU circle be made larger to better show the size differential?
 - [x] Swap 30,000,000 virtual w/ native crypto wallets boxes (Native Crypto Wallets larger, Digital Transactions smaller; and swap image between them.)
 - [x] **(@AE)** Add token icons (VCORE + 1 VCOIN) to the tokens going into wallet
-- [ ] On mobile, is it possible to stretch the image more vertical based so there isn’t such a big gap on top and bottom?
+- [x] On mobile, is it possible to stretch the image more vertical based so there isn’t such a big gap on top and bottom?
 
 ### VCORE FEATURES
 
@@ -109,3 +106,33 @@
 ### FOOTER
 
 - [x] Change “Stay Updated” in footer to “Subscribe to Newsletter”
+
+## Round II
+
+- [x] (AE) (In the metaverse size icon) Also can we add the VCORE token symbol to the IMVU logo (to show them as the same/connected)
+
+- [x] (CHOICE) For the avatars now that you hav e a decent amount go ahead and just pick the couple that we think works best with the 3d model and remove the ones that don't look good/right. If there are two that clearly work better than the rest, having only 1 or 2 is even fine.
+
+- [x] On "Introducing VCORE" can we make VCORE not italics, and also try to make VCORE pop a little with some gold color or effect on it?
+
+- [x] For card 2 (1,000,000 users) can we have the final image keep full size after it appears?
+
+- [x] For Native Crypto Wallets tab, can the coins move a bit slower going into the wallet? Instead of a 2nd VCORE coin, can we make the third coin just a coin that says "NFTs" on it? Or even show one of the digital item wireframes with NFT written on it going into the wallet?
+
+- [x] For Leadership team on the desktop site, can we shrink the images a bit so that we can fit more people on the screen and not have our faces be such a big focus? Mobile it's fine with one per screen and sliding it, but desktop if we could have the size of the image be a bit smaller so it's not so overpowering that would be great.
+
+- [x] The mobile spacing on the data cards still seems like there's too much vertical padding on the animations and in the blank center portions.
+
+- [x] For Follow on the footer can we replace Telegram with Discord, and add LinkedIn?
+
+- [x] Can we fit in a new card in the "by the numbers" section; in terms of priority I would put it 3rd (behind 18+ and 1,000,000 DAU) but wherever you think it can fit best design wise is also good.
+      A TIME100 Company
+      One of only four Web3 companies selected as a Time 100 Most Influential Company in 2022, alongside Opensea, RecRoom, and Sandbox.
+
+(WIP)
+
+- [ ] (AE, needs icon first) Image on this one can be the TIME100 badge (you can see what it looks like on metajuice.com; I'll try to find it but our graphic designer is off until Jan 4 so it may need to be plugged in after he's back
+
+- [ ] (NEEDS GRAPHIC DESIGN) For the top left VCORE logo, can we replace the asterisk mark with a 2D version of the token image? (The one that buyers/sellers will see on an exchange.) Ideally this would be a 2D/straight on version of the new revamped 3D gold coin on the site with a black VCORE symbol in the center. Also if we can bold the VCORE name.
+
+- [ ] (CHOICE) For the data cards in general, any thoughts with font style/size/color to make the longer text key pop with the critical information? Maybe making some of the key points in the longer text bolded or a gold color to highlight them? Curious on thoughts for this, and I know a lot of these tweaks we can do with the editor. -> My pick would be bolding / use the gold (at this point we're beginning to use it in more than an accent place so might actually fit)

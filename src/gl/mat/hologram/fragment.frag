@@ -8,7 +8,7 @@ varying vec3 v_normal;
 varying vec3 v_view;
 
 const float rgb_fac = .002;
-const float faces_fac =  0.1111111111 ; // 0.1666666667
+const float faces_fac =  0.2 ; // 0.1666666667
 
 #include "../_/noise.glsl"
 

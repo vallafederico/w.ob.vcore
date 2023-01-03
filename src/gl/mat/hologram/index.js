@@ -27,8 +27,8 @@ export default class extends ShaderMaterial {
 
     // swap faces
     setInterval(() => {
-      this.face_swap = Math.floor(Math.random() * 9);
-      console.log(this.uniforms.u_face_swap.value);
+      this.face_swap = Math.floor(Math.random() * 5);
+      // console.log(this.uniforms.u_face_swap.value);
     }, 5000);
   }
 
