@@ -109,6 +109,8 @@
 
 ## Round II
 
+- [x] (NEEDS GRAPHIC DESIGN) For the top left VCORE logo, can we replace the asterisk mark with a 2D version of the token image? (The one that buyers/sellers will see on an exchange.) Ideally this would be a 2D/straight on version of the new revamped 3D gold coin on the site with a black VCORE symbol in the center. Also if we can bold the VCORE name.
+
 - [x] (AE) (In the metaverse size icon) Also can we add the VCORE token symbol to the IMVU logo (to show them as the same/connected)
 
 - [x] (CHOICE) For the avatars now that you hav e a decent amount go ahead and just pick the couple that we think works best with the 3d model and remove the ones that don't look good/right. If there are two that clearly work better than the rest, having only 1 or 2 is even fine.
@@ -132,7 +134,5 @@
 (WIP)
 
 - [ ] (AE, needs icon first) Image on this one can be the TIME100 badge (you can see what it looks like on metajuice.com; I'll try to find it but our graphic designer is off until Jan 4 so it may need to be plugged in after he's back
-
-- [ ] (NEEDS GRAPHIC DESIGN) For the top left VCORE logo, can we replace the asterisk mark with a 2D version of the token image? (The one that buyers/sellers will see on an exchange.) Ideally this would be a 2D/straight on version of the new revamped 3D gold coin on the site with a black VCORE symbol in the center. Also if we can bold the VCORE name.
 
 - [ ] (CHOICE) For the data cards in general, any thoughts with font style/size/color to make the longer text key pop with the critical information? Maybe making some of the key points in the longer text bolded or a gold color to highlight them? Curious on thoughts for this, and I know a lot of these tweaks we can do with the editor. -> My pick would be bolding / use the gold (at this point we're beginning to use it in more than an accent place so might actually fit)
