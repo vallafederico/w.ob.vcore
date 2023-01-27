@@ -16,13 +16,12 @@ export default class {
     this.video = document.querySelector('[data-loader="video"]');
 
     this.videoCookie = handleCookie();
-    // console.log("videocookie", this.videoCookie);
   }
 
   async load() {
     if (geoRedirect()) return; // geo redirect
 
-    console.time("load");
+    // console.time("load");
     const [model, mt_black, mt_gold, tx_faces, mt_metal, video] =
       await Promise.all([
         loadModel(assets.model),
@@ -34,7 +33,7 @@ export default class {
       ]);
 
     tx_faces.flipY = false;
-    console.timeEnd("load");
+    // console.timeEnd("load");
 
     this.fadeOut();
 
@@ -60,17 +59,6 @@ export default class {
     this.video.remove();
     new Promise((resolve) => resolve());
   }
-
-  // fadeVideo() {
-  //   gsap.to(this.video, {
-  //     duration: 0.5,
-  //     delay: 0,
-  //     autoAlpha: 0,
-  //     onComplete: () => {
-  //       this.video.remove();
-  //     },
-  //   });
-  // }
 
   fadeOut() {
     gsap.to(this.wrapper, {

@@ -24,6 +24,8 @@ export class Slider {
     const rubberband = evalStr(this.element.dataset.rubberband);
     const drag = evalStr(this.element.dataset.drag);
     const centered = evalStr(this.element.dataset.centered);
+    console.log("centered: ", centered);
+
     const perview = () => {
       const { perview } = this.element.dataset;
       if (perview === undefined || perview === "0") {
@@ -71,7 +73,7 @@ export class Slider {
       ...config, // INIT config takes precedence
     };
 
-    // console.log("Slider Configuration: ", this.config);
+    console.log("Slider Configuration: ", this.config);
   }
 
   init() {
