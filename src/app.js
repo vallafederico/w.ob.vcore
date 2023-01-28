@@ -3,19 +3,22 @@ import Viewport from "./modules/viewport";
 import Scroll from "./modules/scroll";
 import Gl from "./gl/gl";
 
+import { printSignature } from "./signature";
+
 class App {
-  constructor() {
+  constructor(isGeoBlock) {
     this.body = document.querySelector("body");
     this.viewport = new Viewport();
     printSignature();
 
+    console.log("altApp:", window.altApp);
     this.time = 0;
 
     this.init();
   }
 
   init() {
-    this.scroll = new Scroll();
+    if (!window.altApp) this.scroll = new Scroll();
     this.dom = new Dom();
     this.gl = new Gl("[data-gl='c']");
 
@@ -44,16 +47,22 @@ class App {
   /* Events */
 }
 
+/**
+ * INit
+ */
+
+// check if it is editor view
 window.isEditorView = false;
 observeEditor();
 
-window.app = new App();
-
-// signature
-function printSignature() {
-  const style =
-    "font-size:10px; color:#fff; background:#000; padding: 5px 10px;";
-  console.log("%cSite by offbrand. https://www.itsoffbrand.com/", style);
+console.log(window.location.pathname);
+if (window.location.pathname !== "/") {
+  window.altApp = true;
+  window.app = new App();
+} else {
+  // init app
+  window.altApp = false;
+  window.app = new App();
 }
 
 // editor view

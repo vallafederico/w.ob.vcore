@@ -3,6 +3,7 @@ import { WebGLRenderer } from "three";
 import Loader from "./util/loader.js";
 import Viewport from "./viewport.js";
 import Scene from "./scene.js";
+import GeoblockScene from "./geoblockScene.js";
 import Camera from "./camera.js";
 
 import { Post } from "./post.js";
@@ -56,7 +57,11 @@ export default class Gl {
   }
 
   create() {
-    this.scene = new Scene();
+    if (window.altApp) {
+      this.scene = new GeoblockScene();
+    } else {
+      this.scene = new Scene();
+    }
   }
 
   render() {

@@ -3,7 +3,6 @@ export function geoRedirect() {
   const region = val.split("/")[0];
 
   const { redirect, redirectActive } = document.querySelector("body").dataset;
-  // console.log("detected region: ", region, redirectActive);
 
   const queryString = window.location.search;
 

@@ -7,11 +7,11 @@ import { Scale } from "./animation/scale";
 
 export default class {
   constructor() {
-    this.createText();
-    this.createAnimation();
-    this.createSlider();
+    if (!window.altApp) this.createText();
+    if (!window.altApp) this.createAnimation();
+    if (!window.altApp) this.createSlider();
 
-    this.mobile = new Mobile();
+    if (!window.altApp) this.mobile = new Mobile();
   }
 
   resize() {}

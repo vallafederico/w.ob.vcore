@@ -14,38 +14,57 @@ export default class {
     gsap.set(this.page, { autoAlpha: 0 });
 
     this.video = document.querySelector('[data-loader="video"]');
-
     this.videoCookie = handleCookie();
   }
 
   async load() {
-    if (geoRedirect()) return; // geo redirect
-
-    // console.time("load");
-    const [model, mt_black, mt_gold, tx_faces, mt_metal, video] =
-      await Promise.all([
+    if (window.altApp) {
+      const [model, mt_black, mt_gold, mt_metal] = await Promise.all([
         loadModel(assets.model),
         loadTexture(assets.mt_black),
         loadTexture(assets.mt_gold),
-        loadTexture(assets.tx_faces),
         loadTexture(assets.mt_metal),
-        this.videoCookie ? this.fadeVideoIn() : this.jumpVideo(),
       ]);
 
-    tx_faces.flipY = false;
-    // console.timeEnd("load");
+      this.fadeOut();
 
-    this.fadeOut();
+      // SPLIT MODEL HERE
+      return {
+        model: model.scene,
+        animations: model.animations,
+        mt_black,
+        mt_gold,
+        mt_metal,
+      };
+    } else {
+      if (geoRedirect()) return; // geo redirect
 
-    // SPLIT MODEL HERE
-    return {
-      model: model.scene,
-      animations: model.animations,
-      mt_black,
-      mt_gold,
-      tx_faces,
-      mt_metal,
-    };
+      // console.time("load");
+      const [model, mt_black, mt_gold, tx_faces, mt_metal, video] =
+        await Promise.all([
+          loadModel(assets.model),
+          loadTexture(assets.mt_black),
+          loadTexture(assets.mt_gold),
+          loadTexture(assets.tx_faces),
+          loadTexture(assets.mt_metal),
+          this.videoCookie ? this.fadeVideoIn() : this.jumpVideo(),
+        ]);
+
+      tx_faces.flipY = false;
+      // console.timeEnd("load");
+
+      this.fadeOut();
+
+      // SPLIT MODEL HERE
+      return {
+        model: model.scene,
+        animations: model.animations,
+        mt_black,
+        mt_gold,
+        tx_faces,
+        mt_metal,
+      };
+    }
   }
 
   async fadeVideoIn() {
@@ -61,6 +80,8 @@ export default class {
   }
 
   fadeOut() {
+    if (window.altApp) return;
+
     gsap.to(this.wrapper, {
       duration: 0.5,
       delay: 0,

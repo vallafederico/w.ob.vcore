@@ -41,36 +41,38 @@ export class Post extends EffectComposer {
 
   addEvents() {
     // dark section as cards background
-    new Observe({
-      element: document.querySelector('[data-gl-track="cards"]'),
-      config: {
-        threshold: 0,
-      },
-    })
-      .on("IN", () => {
-        // console.log("in");
-        this.shader.dark = 1;
+    const cardTrackEl = document.querySelector('[data-gl-track="cards"]');
+    if (cardTrackEl)
+      new Observe({
+        element: cardTrackEl,
+        config: {
+          threshold: 0,
+        },
       })
-      .on("OUT", () => {
-        // console.log("out");
-        this.shader.dark = 0;
-      });
+        .on("IN", () => {
+          // console.log("in");
+          this.shader.dark = 1;
+        })
+        .on("OUT", () => {
+          // console.log("out");
+          this.shader.dark = 0;
+        });
 
-    new Observe({
-      element: document.querySelector('[data-gl-track="footer"]'),
-      config: {
-        threshold: 0,
-      },
-    })
-      .on("IN", () => {
-        // console.log("in");
-        this.shader.dark = 1;
+    const footerTrackEl = document.querySelector('[data-gl-track="footer"]');
+    if (footerTrackEl)
+      new Observe({
+        element: footerTrackEl,
+        config: {
+          threshold: 0,
+        },
       })
-      .on("OUT", () => {
-        // console.log("out");
-        this.shader.dark = 0;
-      });
+        .on("IN", () => {
+          // console.log("in");
+          this.shader.dark = 1;
+        })
+        .on("OUT", () => {
+          // console.log("out");
+          this.shader.dark = 0;
+        });
   }
-
-  //   render(t) {}
 }
