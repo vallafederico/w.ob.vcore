@@ -15,6 +15,8 @@ export class Scale extends Transform {
       scaleY: 0,
       transformOrigin: "top right",
     });
+
+    setTimeout(() => this.resize(), 1000);
   }
 
   render() {
@@ -29,6 +31,6 @@ export class Scale extends Transform {
     val = clamp(0, 1, val);
     this.perc = val;
 
-    this.element.style.transform = `scaleY(${val * 2})`;
+    this.element.style.transform = `scaleY(${val * 100}%)`;
   }
 }

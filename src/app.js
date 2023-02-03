@@ -10,8 +10,6 @@ class App {
     this.body = document.querySelector("body");
     this.viewport = new Viewport();
     printSignature();
-
-    console.log("altApp:", window.altApp);
     this.time = 0;
 
     this.init();
@@ -55,7 +53,6 @@ class App {
 window.isEditorView = false;
 observeEditor();
 
-console.log(window.location.pathname);
 if (window.location.pathname !== "/") {
   window.altApp = true;
   window.app = new App();

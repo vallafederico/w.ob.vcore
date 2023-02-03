@@ -15,6 +15,8 @@ export default class {
 
     this.video = document.querySelector('[data-loader="video"]');
     this.videoCookie = handleCookie();
+
+    this.pop = document.querySelector('[data-popup="wrap"]');
   }
 
   async load() {
@@ -88,6 +90,7 @@ export default class {
       autoAlpha: 0,
       onComplete: () => {
         this.wrapper.remove();
+        this.videoCookie ? this.popupIn() : this.popupOut();
 
         window.scrollTo(0, 0);
         gsap.to(this.page, {
@@ -98,6 +101,17 @@ export default class {
         });
       },
     });
+  }
+
+  popupIn() {
+    gsap.set(this.pop, { autoAlpha: 0 });
+    this.pop.style.display = "block";
+    gsap.to(this.pop, {
+      autoAlpha: 1,
+    });
+  }
+  popupOut() {
+    this.pop?.remove();
   }
 }
 
