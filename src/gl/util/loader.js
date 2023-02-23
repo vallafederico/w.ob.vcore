@@ -10,11 +10,24 @@ export default class {
     this.data = data;
     this.wrapper = document.querySelector('[data-loader="w"]');
 
+    // control video from DOM
+    this.videoActive = document.querySelector(
+      "[data-video-active]"
+    ).dataset.videoActive;
+
+    if (this.videoActive === "true") {
+      this.videoActive = true;
+    } else this.videoActive = false;
+
     this.page = document.querySelector('[data-page="w"]');
     gsap.set(this.page, { autoAlpha: 0 });
 
     this.video = document.querySelector('[data-loader="video"]');
-    this.videoCookie = handleCookie();
+    if (this.videoActive === true) {
+      this.videoCookie = handleCookie();
+    } else {
+      this.videoCookie = false;
+    }
 
     this.pop = document.querySelector('[data-popup="wrap"]');
   }
