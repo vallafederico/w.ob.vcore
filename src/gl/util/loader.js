@@ -23,11 +23,7 @@ export default class {
     gsap.set(this.page, { autoAlpha: 0 });
 
     this.video = document.querySelector('[data-loader="video"]');
-    if (this.videoActive === true) {
-      this.videoCookie = handleCookie();
-    } else {
-      this.videoCookie = false;
-    }
+    this.videoCookie = handleCookie();
 
     this.pop = document.querySelector('[data-popup="wrap"]');
   }
@@ -62,7 +58,7 @@ export default class {
           loadTexture(assets.mt_gold),
           loadTexture(assets.tx_faces),
           loadTexture(assets.mt_metal),
-          this.videoCookie ? this.fadeVideoIn() : this.jumpVideo(),
+          this.videoActive ? this.fadeVideoIn() : this.jumpVideo(),
         ]);
 
       tx_faces.flipY = false;
